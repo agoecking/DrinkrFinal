@@ -9,18 +9,18 @@ namespace Drinkr.Models
         public DateTime DataCorrida { get; set; }
         public string Local { get; set; }
         public string Destino { get; set; }
-        public StatusCorrida Status { get; set; }
+        public Motorista Motorista { get; set; }
 
         public Corrida()
         {
         }
-        public Corrida(int id, DateTime dataCorrida, string local, string destino, StatusCorrida status)
+        public Corrida(int id, DateTime dataCorrida, string local, string destino, Motorista motorista)
         {
             Id = id;
             DataCorrida = dataCorrida;
             Local = local;
             Destino = destino;
-            Status = status;
+            Motorista = motorista;
         }
 
     }

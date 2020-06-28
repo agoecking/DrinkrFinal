@@ -3,18 +3,18 @@
     ViewData["Title"] = "Home Page";
 }
 <text>
-    Welcome @ViewData["Nome"] 
+    Welcome @ViewData["Nome"]
 </text>
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
 
-    <p>
-        <a asp-action="CreateCarroes">Registrar Carro</a>
-    </p>
+<p>
+    <a asp-action="CreateCarroes">Registrar Carro</a>
+</p>
 
-    <table class="table">
+@*<table class="table">
         <thead>
             <tr>
                 <th>
@@ -54,95 +54,166 @@
                 </tr>
             }
         </tbody>
-    </table>
+    </table>*@
 
-    <p>
-        <a asp-action="CreateEnderecoes">Registrar Endereço</a>
-    </p>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Cep)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Rua)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Numero)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Bairro)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Cidade)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Endereco)
-            {
+<div class="card text-white bg-dark mb-3" style="max-width: 100%;">
+    <div class="card-header">Carros</div>
+    <div class="card-body">
+
+        <table class="table text-white">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cep)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Rua)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Numero)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Bairro)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cidade)
-                    </td>
-                    <td>
-                        <a asp-action="DeleteEnderecoes" asp-route-id="@item.Id">Delete</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Carro.FirstOrDefault().Modelo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Carro.FirstOrDefault().Marca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Carro.FirstOrDefault().Placa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Carro.FirstOrDefault().Cor)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Carro)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marca)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Placa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cor)
+                        </td>
+                        <td>
+                            <a asp-action="DeleteCarroes" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<p>
+    <a asp-action="CreateEnderecoes">Registrar Endereço</a>
+</p>
 
-    <p>
-        <a asp-action="CreateCartaos">Registrar Cartao</a>
-    </p>
-
-    <table class="table">
-        <thead>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Rua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco.FirstOrDefault().Cidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Endereco)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Numero)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Validade)
-                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cep)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bairro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    <a asp-action="DeleteEnderecoes" asp-route-id="@item.Id">Delete</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Cartao)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Numero)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Validade)
-                    </td>
-                    <td>
-                        <a asp-action="DeleteCartaos" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="CreateCartaos">Registrar Cartao</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cartao.FirstOrDefault().Validade)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cartao)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Validade)
+                </td>
+                <td>
+                    <a asp-action="DeleteCartaos" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="card border-primary" style="max-width: 100%;">
+    <div class="card-header">
+        <h5 class="card-text">Solicitar Corrida</h5>
+    </div>
+    <div class="card-body">
+        <form class="form" asp-action="AcompanharCorrida">
+            <div class="form-group row">
+                <label for="origem" class="col-form-label">Origem:</label>
+                <div class="col">
+                    <input type="text" name="origem" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="destino" class="col-form-label">Destino:</label>
+                <div class="col">
+                    <input type="text" name="destino" class="form-control" />
+                </div>
+            </div>
+            <button type="submit">Solicitar</button>
+        </form>
+    </div>
+</div>
