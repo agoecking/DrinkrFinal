@@ -72,7 +72,7 @@
                             @Html.DisplayFor(modelItem => item.Cor)
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" asp-action="DeleteCarroes" asp-route-id="@item.Id" role="button">Delete</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteCarroes" asp-route-id="@item.Id" role="button">Excluir</a>
                         </td>
                     </tr>
                 }
@@ -129,7 +129,7 @@
                             @Html.DisplayFor(modelItem => item.Cidade)
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" asp-action="DeleteEnderecoes" asp-route-id="@item.Id" role="button">Delete</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteEnderecoes" asp-route-id="@item.Id" role="button">Excluir</a>
                         </td>
                     </tr>
                 }
@@ -173,7 +173,7 @@
                             @Html.DisplayFor(modelItem => item.Validade)
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" asp-action="DeleteCartaos" asp-route-id="@item.Id" role="button">Delete</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteCartaos" asp-route-id="@item.Id" role="button">Excluir</a>
                         </td>
                     </tr>
                 }
@@ -181,25 +181,3 @@
         </table>
     </div>
 </div>
-@*<div class="card border-primary" style="max-width: 100%;">
-        <div class="card-header">
-            <h5 class="card-text">Solicitar Corrida</h5>
-        </div>
-        <div class="card-body">
-            <form class="form" asp-action="AcompanharCorrida">
-                <div class="form-group row">
-                    <label for="origem" class="col-form-label">Origem:</label>
-                    <div class="col">
-                        <input type="text" name="origem" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="destino" class="col-form-label">Destino:</label>
-                    <div class="col">
-                        <input type="text" name="destino" class="form-control" />
-                    </div>
-                </div>
-                <button type="submit">Solicitar</button>
-            </form>
-        </div>
-    </div>*@
