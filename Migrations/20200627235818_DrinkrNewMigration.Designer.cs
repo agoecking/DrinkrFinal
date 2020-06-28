@@ -3,14 +3,16 @@ using System;
 using Drinkr.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Drinkr.Migrations
 {
     [DbContext(typeof(DrinkrContext))]
-    partial class DrinkrContextModelSnapshot : ModelSnapshot
+    [Migration("20200627235818_DrinkrNewMigration")]
+    partial class DrinkrNewMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

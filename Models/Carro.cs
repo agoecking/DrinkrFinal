@@ -13,6 +13,7 @@ namespace Drinkr.Models
         public string Placa { get; set; }
         public string Cor { get; set; }
         public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
 
         public Carro()
         {
@@ -26,6 +27,7 @@ namespace Drinkr.Models
             Placa = placa;
             Cor = cor;
             Usuario = usuario;
+            UsuarioId = usuario.Id;
         }
     }
 }

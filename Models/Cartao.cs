@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,6 +13,7 @@ namespace Drinkr.Models
         public string Nome { get; set; }
         public DateTime Validade { get; set; }
         public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
         public Cartao()
         {
         }
@@ -23,6 +25,7 @@ namespace Drinkr.Models
             Nome = nome;
             Validade = validade;
             Usuario = usuario;
+            UsuarioId = usuario.Id;
         }
     }
 }

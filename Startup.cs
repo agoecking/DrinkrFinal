@@ -23,6 +23,8 @@ namespace Drinkr
         {
             services.AddControllersWithViews();
 
+            services.AddSession();
+
             services.AddDbContext<DrinkrContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DrinkrContext"), builder => builder.MigrationsAssembly("Drinkr")));
             services.AddScoped<SeedingService>();
@@ -46,6 +48,8 @@ namespace Drinkr
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseAuthorization();
 

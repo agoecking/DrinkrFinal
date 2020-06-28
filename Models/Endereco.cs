@@ -14,12 +14,14 @@ namespace Drinkr.Models
         public int Numero { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
+        public Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
 
         public Endereco()
         {
         }
 
-        public Endereco(int id, int cep, string rua, int numero, string bairro, string cidade)
+        public Endereco(int id, int cep, string rua, int numero, string bairro, string cidade, Usuario usuario)
         {
             Id = id;
             Cep = cep;
@@ -27,6 +29,8 @@ namespace Drinkr.Models
             Numero = numero;
             Bairro = bairro;
             Cidade = cidade;
+            Usuario = usuario;
+            UsuarioId = usuario.Id;
         }
 
     }

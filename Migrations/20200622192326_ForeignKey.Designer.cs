@@ -3,14 +3,16 @@ using System;
 using Drinkr.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Drinkr.Migrations
 {
     [DbContext(typeof(DrinkrContext))]
-    partial class DrinkrContextModelSnapshot : ModelSnapshot
+    [Migration("20200622192326_ForeignKey")]
+    partial class ForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,12 +121,7 @@ namespace Drinkr.Migrations
                     b.Property<string>("Rua")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Endereco");
                 });
@@ -145,9 +142,6 @@ namespace Drinkr.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Telefone")
@@ -174,9 +168,6 @@ namespace Drinkr.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Telefone")
@@ -210,15 +201,6 @@ namespace Drinkr.Migrations
                     b.HasOne("Drinkr.Models.Usuario", null)
                         .WithMany("Corridas")
                         .HasForeignKey("UsuarioId");
-                });
-
-            modelBuilder.Entity("Drinkr.Models.Endereco", b =>
-                {
-                    b.HasOne("Drinkr.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

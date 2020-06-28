@@ -3,14 +3,16 @@ using System;
 using Drinkr.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Drinkr.Migrations
 {
     [DbContext(typeof(DrinkrContext))]
-    partial class DrinkrContextModelSnapshot : ModelSnapshot
+    [Migration("20200626230643_NewMigration")]
+    partial class NewMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,9 +149,6 @@ namespace Drinkr.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<int>("Telefone")
                         .HasColumnType("int");
 
@@ -174,9 +173,6 @@ namespace Drinkr.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Telefone")

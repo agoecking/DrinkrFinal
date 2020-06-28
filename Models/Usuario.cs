@@ -10,7 +10,8 @@ namespace Drinkr.Models
         public ICollection<Carro> Carros { get; set; } = new List<Carro>();
         public ICollection<Corrida> Corridas { get; set; } = new List<Corrida>();
 
-        public Usuario(int id, string nome, string email, int cpf, int telefone, DateTime idade ) : base (id, nome, email, cpf, telefone, idade)
+        public Usuario() { }
+        public Usuario(int id, string nome, string email, int cpf, int telefone, DateTime idade, string password) : base (id, nome, email, cpf, telefone, idade, password)
         {
             Id = id;
             Nome = nome;
@@ -18,6 +19,7 @@ namespace Drinkr.Models
             Cpf = cpf;
             Telefone = telefone;
             Idade = idade;
+            Password = password;
         }
         
 

@@ -10,12 +10,12 @@ namespace Drinkr.Models
         public int Cpf { get; set; }
         public int Telefone { get; set; }
         public DateTime Idade { get; set; }
-
+        public string Password { get; set; }
         protected PadraoCadastro()
         {
         }
 
-        protected PadraoCadastro(int id, string nome, string email, int cpf, int telefone, DateTime idade)
+        protected PadraoCadastro(int id, string nome, string email, int cpf, int telefone, DateTime idade, string password)
         {
             Id = id;
             Nome = nome;
@@ -23,6 +23,7 @@ namespace Drinkr.Models
             Cpf = cpf;
             Telefone = telefone;
             Idade = idade;
+            Password = password;
         }
     }
 }

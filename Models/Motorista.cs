@@ -11,7 +11,7 @@ namespace Drinkr.Models
         {
         }
 
-        public Motorista(int id, string nome, string email, int cpf, int telefone, DateTime idade) : base(id, nome, email, cpf, telefone, idade)
+        public Motorista(int id, string nome, string email, int cpf, int telefone, DateTime idade, string password) : base(id, nome, email, cpf, telefone, idade, password)
         {
             Id = id;
             Nome = nome;
