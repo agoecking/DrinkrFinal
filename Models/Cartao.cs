@@ -11,6 +11,8 @@ namespace Drinkr.Models
         public int Id { get; set; }
         public int Numero { get; set; }
         public string Nome { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime Validade { get; set; }
         public Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
