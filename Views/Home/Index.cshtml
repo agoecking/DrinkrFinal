@@ -14,34 +14,35 @@
                 @ViewBag.Message
             </div>
         }
-        <table>
-            <tr>
-                <td>@Html.LabelFor(a => a.Email)</td>
-                <td>@Html.TextBoxFor(a => a.Email)</td>
-                <td>@Html.ValidationMessageFor(a => a.Email)</td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(a => a.Password)
-                </td>
-                <td>
-                    @Html.PasswordFor(a => a.Password)
-                </td>
-                <td>
-                    @Html.ValidationMessageFor(a => a.Password)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Login" />
-                </td>
-                <td></td>
-            </tr>
-        </table>
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.Email)</td>
+            <td>@Html.TextBoxFor(a => a.Email)</td>
+            <td>@Html.ValidationMessageFor(a => a.Email)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Password)
+            </td>
+            <td>
+                @Html.PasswordFor(a => a.Password)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.Password)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" class="btn btn-dark btn-sm" value="Login" role="button" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a class="btn btn-dark btn-sm" asp-action="CreateUsuarios" role="button">Criar Usuario</a>
+            </td>
+        </tr>
+    </table>
     </fieldset>
-
-    <p>
-        <a asp-action="CreateUsuarios">Criar Usuario</a>
-    </p>
 }  
