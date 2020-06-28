@@ -1,5 +1,4 @@
-﻿using Drinkr.Models.Enums;
-using System;
+﻿using System;
 
 namespace Drinkr.Models
 {
@@ -7,18 +6,18 @@ namespace Drinkr.Models
     {
         public int Id { get; set; }
         public DateTime DataCorrida { get; set; }
-        public string Local { get; set; }
+        public string Origem { get; set; }
         public string Destino { get; set; }
         public Motorista Motorista { get; set; }
 
         public Corrida()
         {
         }
-        public Corrida(int id, DateTime dataCorrida, string local, string destino, Motorista motorista)
+        public Corrida(int id, DateTime dataCorrida, string origem, string destino, Motorista motorista)
         {
             Id = id;
             DataCorrida = dataCorrida;
-            Local = local;
+            Origem = origem;
             Destino = destino;
             Motorista = motorista;
         }

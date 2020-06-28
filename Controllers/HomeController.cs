@@ -244,7 +244,18 @@ namespace Drinkr.Controllers
         }
 
 
+        public async Task<IActionResult> AcompanharCorrida(string origem, string destino)
+        {
+            Corrida corrida = new Corrida();
+            corrida.Origem = origem;
+            corrida.Destino = destino;
+            corrida.DataCorrida = DateTime.Now;
+            List<Motorista> motorista = await _context.Motorista.ToListAsync();
+            Random random = new Random();
+            corrida.Motorista = motorista[random.Next(0, motorista.Count - 1)];
 
+            return View(corrida);
+        }
 
 
 

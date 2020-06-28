@@ -175,3 +175,4 @@ C:\Users\albre\OneDrive\Área de Trabalho\UP\DrinkrFinal\Drinkr\obj\Debug\netcor
 C:\Users\albre\OneDrive\Área de Trabalho\UP\DrinkrFinal\Drinkr\obj\Debug\netcoreapp3.1\Drinkr.csproj.CoreCompileInputs.cache
 C:\Users\albre\OneDrive\Área de Trabalho\UP\DrinkrFinal\Drinkr\obj\Debug\netcoreapp3.1\Drinkr.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\albre\OneDrive\Área de Trabalho\UP\DrinkrFinal\Drinkr\obj\Debug\netcoreapp3.1\Razor\Views\Home\CreateUsuarios.cshtml.g.cs
+C:\Users\albre\OneDrive\Área de Trabalho\UP\DrinkrFinal\Drinkr\obj\Debug\netcoreapp3.1\Razor\Views\Home\AcompanharCorrida.cshtml.g.cs
